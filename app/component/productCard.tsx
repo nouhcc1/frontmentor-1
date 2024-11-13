@@ -19,21 +19,21 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (//hover:shadow-xl transition-shadow duration-300
-    <div className=" max-w-sm overflow-hidden ">
+    <div className="max-w-sm overflow-hidden ">
       <Image className="w-full rounded-lg object-cover" 
       src={product.image.desktop} alt={product.name} width={750} height={750}/>
         <div className="flex items-center justify-center w-full ">
         {count > 0  
-            ? <button className="shadow-sm shadow-slate-500 transform -translate-y-1/2  px-4 py-2 rounded-full grid grid-cols-6 items-center bg-red-700 " onClick={handleClick}>
-                <Image className="p-1 col-span-1 w-5 h-5 rounded-full border border-white" src="/assets/images/icon-decrement-quantity.svg" alt={product.name} width={24} height={24}/>
+            ? <button className="px-2 shadow-sm shadow-slate-500 transform -translate-y-1/2  w-2/3 py-3 rounded-full grid grid-cols-6 items-center place-items-center bg-red-700 " onClick={handleClick}>
+                <Image className=" flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white" src="/assets/images/icon-decrement-quantity.svg" alt={product.name} width={24} height={24}/>
                 <span className="col-span-4 text-white ">{count}</span>
-                <Image className="p-1 col-span-1 w-5 h-5  rounded-full border border-white" src="/assets/images/icon-increment-quantity.svg" alt={product.name} width={24} height={24}/>
+                <Image className="flex items-center justify-center p-1 col-span-1 w-5 h-5  rounded-full border border-white" src="/assets/images/icon-increment-quantity.svg" alt={product.name} width={24} height={24}/>
               </button>
             : <button 
-                  className="shadow-sm shadow-slate-500 transform -translate-y-1/2 rounded-full bg-white px-4 py-2 flex items-center justify-center hover:border hover:border-amber-600"
+                  className="shadow-sm box-border shadow-slate-500 transform -translate-y-1/2 w-2/3 rounded-full bg-white  py-3 flex items-center justify-center hover:outline hover:outline-2 hover:outline-amber-600 hover:text-amber-600"
                   onClick={handleClick}
                 >
-                <span className='flex items-center justify-center w-full hover:text-amber-600'><Image className="w-4 h-4 mr-2" src="/assets/images/icon-add-to-cart.svg" alt={product.name} width={16} height={16}/>Add to Cart</span>  
+                <span className='flex items-center justify-center w-full'><Image className="w-4 h-4 mr-2" src="/assets/images/icon-add-to-cart.svg" alt={product.name} width={16} height={16}/>Add to Cart</span>  
               </button>
             }
         </div>

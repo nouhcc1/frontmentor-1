@@ -3,12 +3,12 @@ import ProductGrid from "./component/productGrid";
 import SideBare from "./component/sideBare";
 
 export default function Home() {
-  return ( //grid grid-cols-4 gap-4  //col-span-3 col-span-1
-    <div className="w-[70%] h-dvh pt-20 flex ">  
-      <div className="basis-3/4">
+  return ( //grid grid-cols-4 gap-4  //flex flex-initial flex-wrap basis-[70%] basis-[30%]
+    <div className="grid grid-cols-1 max-w-7xl h-dvh pt-20 px-4 lg:grid-cols-12">  
+        <div className="col-span-8 ">
         <ProductGrid/>
         </div>
-      <div className="basis-1/4">
+      <div className="col-span-4 ">
         <SideBare/>
       </div>
     </div>
@@ -32,7 +32,7 @@ export default function Home() {
             <code className="bg-black text-white dark:bg-white/[.06] px-1 py-0.5 rounded-md  font-semibold">
               app/page.tsx
             </code>
-            .
+            
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
