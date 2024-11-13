@@ -8,7 +8,7 @@ export default function Home() {
         <div className="col-span-8 ">
         <ProductGrid/>
         </div>
-      <div className="col-span-4 ">
+      <div className="col-span-4 lui">
         <SideBare/>
       </div>
     </div>
