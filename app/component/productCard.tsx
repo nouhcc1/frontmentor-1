@@ -58,7 +58,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             className="outline outline-1 outline-slate-300 transform -translate-y-1/2 w-2/3 rounded-full bg-white py-3 flex items-center justify-center hover:outline hover:outline-2 hover:outline-amber-600 hover:text-amber-600"
             onClick={handleClick}
           >
-            <span className="flex items-center justify-center w-full">
+            <span className="flex text-sm items-center justify-center w-full xs:text-xs mxs:text-sm">
               <Image
                 className="w-4 h-4 mr-2"
                 src="/assets/images/icon-add-to-cart.svg"

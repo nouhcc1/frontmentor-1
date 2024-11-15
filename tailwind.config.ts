@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
   	extend: {
+		screens: {
+			'xs': '429px', // Custom breakpoint
+			'mxs': '497px',
+			
+		},
   		colors: {
 			redbutton: 'hsl(14, 86%, 42%)',
 			colorsub: '#CAAFA7',
@@ -64,5 +69,6 @@ export default {
   		}
   	}
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
