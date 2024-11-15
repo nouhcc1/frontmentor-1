@@ -19,8 +19,8 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (//hover:shadow-xl transition-shadow duration-300 shadow-sm shadow-slate-500
-    <div className="p-1 max-w-sm overflow-hidden ">
-      <Image className={`w-full rounded-lg object-cover+ ${count> 0 && "outline outline-4 outline-amber-600"}`}
+    <div className="p-1 max-w-sm overflow-hidden">
+      <Image className={`w-full rounded-lg object-cover+ ${count> 0 && "outline outline-[3px] outline-amber-600"}`}
       src={product.image.desktop} alt={product.name} width={750} height={750}/>
         <div className="flex items-center justify-center w-full ">
         {count > 0  
@@ -37,9 +37,9 @@ const ProductCard = ({ product }: { product: Product }) => {
               </button>
             }
         </div>
-      <div className="">
+      <div className="transform -translate-y-4 ">
         <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wide">{product.category}</span>   
-        <h2 className="text-lg font-bold text-gray-800">{product.name}</h2>
+        <h2 className="text-lg line-clamp-1 font-bold text-gray-800">{product.name}</h2>
         <p className="text-xl font-semibold text-amber-600">${product.price}</p>
       </div>
     </div>
