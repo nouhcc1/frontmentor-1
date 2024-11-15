@@ -11,6 +11,11 @@ export default {
   	extend: {
   		colors: {
 			redbutton: 'hsl(14, 86%, 42%)',
+			colorsub: '#CAAFA7',
+			colorsub500: '#ad8477',
+			colorsub700: '#765348',
+			colorsub800: '#66483e',
+			colorsub900: '#362621',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
