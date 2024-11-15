@@ -10,6 +10,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			redbutton: 'hsl(14, 86%, 42%)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
