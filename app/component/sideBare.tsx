@@ -4,11 +4,9 @@ import { useCart } from '../context/CartContext';
 import Image from 'next/image';
 
 const SideBare = () => {
-  const { cartItems } = useCart();
-  const { removeFromCart } = useCart();
+  const { cartItems,removeFromCart } = useCart();
+
   const total = cartItems.reduce((acc, item) => acc + item.price * item.count, 0);
-
-
 
   function handleClick(): void {
   }

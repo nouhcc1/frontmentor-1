@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 
-type Product = {
+type Products = {
   image: {
     desktop: string;
   };
@@ -13,26 +13,27 @@ type Product = {
   price: number;
 };
 
-const ProductCard = ({ product }: { product: Product }) => {
-  const [count, setCount] = useState(0);  
-  const { addToCart } = useCart();
 
+const ProductCard = ({ product }: { product: Products }) => {
+  //const [count, setCount] = useState(0);  
+  const { addToCart,getProductCount } = useCart();
+  
   const handleClick = () => {
-  setCount(count + 1);
-    addToCart({ name: product.name, count, price: product.price });
+    //setCount(count + 1);
+    addToCart({ name: product.name, count: getProductCount(product.name), price: product.price });
   };
 
   return (
     <div className="p-1 max-w-sm overflow-hidden">
       <Image
-        className={`w-full rounded-lg object-cover+ ${count > 0 && "outline outline-[3px] outline-amber-600"}`}
+        className={`w-full rounded-lg object-cover+ ${getProductCount(product.name) > 0 && "outline outline-[3px] outline-amber-600"}`}
         src={product.image.desktop}
         alt={product.name}
         width={750}
         height={750}
       />
       <div className="flex items-center justify-center w-full ">
-        {count > 0 ? (
+        {getProductCount(product.name)  > 0 ? (
           <button
             className="px-2 transform -translate-y-1/2 w-2/3 py-3 rounded-full grid grid-cols-6 items-center place-items-center bg-redbutton"
             onClick={handleClick}
@@ -44,7 +45,7 @@ const ProductCard = ({ product }: { product: Product }) => {
               width={24}
               height={24}
             />
-            <span className="col-span-4 text-white">{count}</span>
+            <span className="col-span-4 text-white">{getProductCount(product.name)}</span>
             <Image
               className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
               src="/assets/images/icon-increment-quantity.svg"

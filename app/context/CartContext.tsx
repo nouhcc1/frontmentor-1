@@ -11,6 +11,7 @@ type CartContextType = {
   cartItems: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (name: string) => void;
+  getProductCount: (name: string) => number; 
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -36,9 +37,17 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         item.name != name);
     });
   };
+  const getProductCount = (name: string) => {
+      const existingItem = cartItems.find((item) => item.name === name);
+      if (existingItem) {
+        return existingItem.count;
+      } else {
+        return 0;
+      }
+  };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart , removeFromCart}}>
+    <CartContext.Provider value={{ cartItems, addToCart , removeFromCart,getProductCount}}>
       {children}
     </CartContext.Provider>
   );
