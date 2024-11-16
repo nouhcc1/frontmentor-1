@@ -19,7 +19,7 @@ const ProductCard = ({ product }: { product: Products }) => {
   
   const handleClick = () => {
     //setCount(count + 1);
-    addToCart({ name: product.name, count: getProductCount(product.name), price: product.price });
+    addToCart({ name: product.name, count: getProductCount(product.name), price: product.price, image: product.image.desktop});
   };
 
   return (
