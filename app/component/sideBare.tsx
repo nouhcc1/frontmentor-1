@@ -10,9 +10,9 @@ const SideBare = () => {
 
   const total = cartItems.reduce((acc, item) => acc + item.price * item.count, 0);
 
-  const handleClick = () => {
-    setShowPopup(false);
-    emptyCard();
+  const handleClick =() => {
+      setShowPopup(false);
+      emptyCard();
   };
 
   return (
@@ -68,8 +68,8 @@ const SideBare = () => {
           </div>
         </div>
         }
-        <div className={`p-4 fixed top-0 left-0 w-full h-full bg-slate-700 bg-opacity-30 ${ShowPopup===true ? "flex flex-1 justify-center items-center":"hidden"}`}>
-          <div className="p-8 flex-grow grid content-start gap-4 max-w-lg h-auto bg-white rounded-lg ">
+        <div className={`p-4 flex flex-1 justify-center items-center fixed top-0 left-0 w-full h-full bg-slate-700 bg-opacity-30 transition-all duration-500 ${ShowPopup===true ? "opacity-100":"opacity-0 pointer-events-none"}`}>
+          <div className={`p-8 flex-grow grid content-start gap-4 max-w-lg h-auto bg-white rounded-lg  transition-all duration-500 ${ShowPopup===true ? " opacity-100 scale-100":"opacity-0 scale-90"}`}>
             <Image
                     className=" w-10 h-10"
                     src="/assets/images/icon-order-confirmed.svg"
@@ -125,3 +125,5 @@ const SideBare = () => {
 };
 
 export default SideBare;
+
+

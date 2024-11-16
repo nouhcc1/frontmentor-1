@@ -25,8 +25,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.name === product.name);
       if (existingItem) {
+        if(!(product.count + 1>0)) removeFromCart(existingItem.name) ;
         return prevItems.map((item) =>
-          item.name === product.name ? { ...item, count: item.count + 1 } : item
+          item.name === product.name ? { ...item, count: product.count + 1 } : item
         );
       } else {
         return [...prevItems, { ...product, count: 1 }];

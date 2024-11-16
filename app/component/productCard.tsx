@@ -21,6 +21,10 @@ const ProductCard = ({ product }: { product: Products }) => {
     //setCount(count + 1);
     addToCart({ name: product.name, count: getProductCount(product.name), price: product.price, image: product.image.desktop});
   };
+  const handleClickMinus = () => {
+    //setCount(count + 1);
+    addToCart({ name: product.name, count: getProductCount(product.name)-2, price: product.price, image: product.image.desktop});
+  };
 
   return (
     <div className="p-1 max-w-sm overflow-hidden">
@@ -33,9 +37,9 @@ const ProductCard = ({ product }: { product: Products }) => {
       />
       <div className="flex items-center justify-center w-full ">
         {getProductCount(product.name)  > 0 ? (
-          <button
-            className="px-2 transform -translate-y-1/2 w-2/3 py-3 rounded-full grid grid-cols-6 items-center place-items-center bg-redbutton"
-            onClick={handleClick}
+          <div
+            className="px-2 transform -translate-y-1/2 w-2/3 py-3 rounded-full grid grid-cols-3 items-center place-items-center bg-redbutton"
+           
           >
             <Image
               className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
@@ -43,16 +47,18 @@ const ProductCard = ({ product }: { product: Products }) => {
               alt={product.name}
               width={24}
               height={24}
+              onClick={handleClickMinus}
             />
-            <span className="col-span-4 text-white">{getProductCount(product.name)}</span>
+            <span className="col-span-1 text-white">{getProductCount(product.name)}</span>
             <Image
               className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
               src="/assets/images/icon-increment-quantity.svg"
               alt={product.name}
               width={24}
               height={24}
+              onClick={handleClick}
             />
-          </button>
+          </div>
         ) : (
           <button
             className="outline outline-1 outline-slate-300 transform -translate-y-1/2 w-2/3 rounded-full bg-white py-3 flex items-center justify-center hover:outline hover:outline-2 hover:outline-amber-600 hover:text-amber-600"
