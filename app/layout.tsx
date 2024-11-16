@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center items-center w-full h-screen bg-rose-100 bg-opacity-40`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center items-center w-full h-screen bg-gradient-to-br from-rose-200 to-blue-300`}//bg-rose-100 bg-opacity-40
       >
         <CartProvider>
           {children}

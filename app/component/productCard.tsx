@@ -1,7 +1,6 @@
 "use client";
 
 import Image from 'next/image';
-import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 
 type Products = {
@@ -26,7 +25,7 @@ const ProductCard = ({ product }: { product: Products }) => {
   return (
     <div className="p-1 max-w-sm overflow-hidden">
       <Image
-        className={`w-full rounded-lg object-cover+ ${getProductCount(product.name) > 0 && "outline outline-[3px] outline-amber-600"}`}
+        className={`w-full rounded-lg object-cover ${getProductCount(product.name) > 0 && "outline outline-[3px] outline-amber-600"}`}
         src={product.image.desktop}
         alt={product.name}
         width={750}
