@@ -4,11 +4,11 @@ import SideBare from "./component/sideBare";
 
 export default function Home() {
   return ( //grid grid-cols-4 gap-4  //flex flex-initial flex-wrap basis-[70%] basis-[30%]
-    <div className="grid grid-cols-1 max-w-7xl h-dvh pt-8 px-4 lg:grid-cols-12 lg:pt-20">  
+    <div className="grid grid-cols-1 max-w-7xl h-screen pt-8 px-4 lg:grid-cols-12 lg:pt-20">  
         <div className="col-span-8 ">
         <ProductGrid/>
         </div>
-      <div className="col-span-4 lui">
+      <div className="col-span-4">
         <SideBare/>
       </div>
     </div>

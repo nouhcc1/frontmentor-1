@@ -12,7 +12,7 @@ const SideBare = () => {
   }
 
   return (
-    <div className='p-6 w-full bg-white rounded-lg'>
+    <div className='p-6 mb-8 w-full bg-white rounded-lg'>
       <h1 className='text-2xl font-bold  text-redbutton'>{"Your Cart ("+cartItems.length+")"}</h1>
       {!(cartItems.length>0)?
       <div className='pt-8 grid items-center justify-center w-full space-y-4'>
