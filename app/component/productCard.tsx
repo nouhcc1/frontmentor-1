@@ -29,7 +29,7 @@ const ProductCard = ({ product }: { product: Products }) => {
   return (
     <div className="p-1 max-w-sm overflow-hidden">
       <Image
-        className={`w-full rounded-lg object-cover ${getProductCount(product.name) > 0 && "outline outline-[3px] outline-amber-600"}`}
+        className={`outline outline-[3px] w-full rounded-lg object-cover ${getProductCount(product.name) > 0 ? "outline outline-[3px] outline-amber-600":"outline-white"}`}
         src={product.image.desktop}
         alt={product.name}
         width={750}
@@ -49,7 +49,7 @@ const ProductCard = ({ product }: { product: Products }) => {
               height={24}
               onClick={handleClickMinus}
             />
-            <span className="col-span-1 text-white">{getProductCount(product.name)}</span>
+            <span className="col-span-1 text-white text-sm xs:text-xs mxs:text-sm">{getProductCount(product.name)}</span>
             <Image
               className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
               src="/assets/images/icon-increment-quantity.svg"
@@ -66,7 +66,7 @@ const ProductCard = ({ product }: { product: Products }) => {
           >
             <span className="flex text-sm items-center justify-center w-full xs:text-xs mxs:text-sm">
               <Image
-                className="w-4 h-4 mr-2"
+                className="w-5 h-5 mr-2"
                 src="/assets/images/icon-add-to-cart.svg"
                 alt={product.name}
                 width={16}

@@ -68,8 +68,8 @@ const SideBare = () => {
           </div>
         </div>
         }
-        <div className={`p-4 flex flex-1 justify-center items-center fixed top-0 left-0 w-full h-full bg-slate-700 bg-opacity-30 transition-all duration-500 ${ShowPopup===true ? "opacity-100":"opacity-0 pointer-events-none"}`}>
-          <div className={`p-8 flex-grow grid content-start gap-4 max-w-lg h-auto bg-white rounded-lg  transition-all duration-500 ${ShowPopup===true ? " opacity-100 scale-100":"opacity-0 scale-90"}`}>
+        <div className={`p-4 flex flex-1 justify-center items-center fixed top-0 left-0 w-full h-screen bg-slate-700 bg-opacity-30 transition-all duration-500 ${ShowPopup===true ? "opacity-100":"opacity-0 pointer-events-none"}`} onClick={()=>setShowPopup(false)}>
+          <div className={`p-8 flex-grow grid content-start gap-4 max-w-lg h-auto max-h-full bg-white rounded-lg  transition-all duration-500 ${ShowPopup===true ? " opacity-100 scale-100":"opacity-0 scale-90"}`}>
             <Image
                     className=" w-10 h-10"
                     src="/assets/images/icon-order-confirmed.svg"
@@ -78,10 +78,10 @@ const SideBare = () => {
                     height={24}
                   />
             <div >
-              <h1 className="text-4xl font-bold text-black">Order Confirmed</h1>
+              <h1 className="text-4xl font-bold text-black ">Order Confirmed</h1>
               <p className="text-xs font-semibold text-colorsub500">We hope you enjoy your food!</p>
             </div>
-            <div className='bg-rose-100 bg-opacity-40 px-4 rounded-md'>
+            <div className='bg-rose-100 bg-opacity-40 px-4 rounded-md overflow-y-auto max-h-96'>
                <ul className="">
               {cartItems.map((item, index) => (
                 <li key={index} className="flex items-center justify-between py-4 col-span-2 border-b border-rose-100 border-opacity-80 ">
@@ -93,7 +93,7 @@ const SideBare = () => {
                       width={200}
                       height={200}
                     />
-                    <div className="text-sm ">
+                   <div className="text-sm ">
                     <h1 className="font-bold text-colorsub800 line-clamp-1">{item.name}</h1>
                     <p className="font-semibold text-amber-600">{item.count+"x"}   <span className='text-colorsub'><span className='ml-2 text-xs font-thin '>@</span>${item.price}</span> </p>
                   </div>
@@ -101,12 +101,12 @@ const SideBare = () => {
                   
                   <span className='text-colorsub900 font-bold'>${item.count*item.price}</span>
                 </li>
-              ))}
-            </ul>
-            <div className="flex items-center justify-between py-4">
-              <span className="text-sm font-semibold text-colorsub700 tracking-wide">Order Total</span>
-              <h2 className="text-2xl font-mono font-bold text-colorsub900">${total}</h2>
-            </div>
+               ))}
+              </ul>
+              <div className="flex items-center justify-between py-4">
+                <span className="text-sm font-semibold text-colorsub700 tracking-wide">Order Total</span>
+                <h2 className="text-2xl font-mono font-bold text-colorsub900">${total}</h2>
+              </div>
             </div>
            
             <div className="px-4 flex flex-col items-center justify-between gap-4">
