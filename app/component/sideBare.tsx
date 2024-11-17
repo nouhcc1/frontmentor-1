@@ -78,7 +78,7 @@ const SideBare = () => {
                     height={24}
                   />
             <div >
-              <h1 className="text-4xl font-bold text-black ">Order Confirmed</h1>
+              <h1 className="text-2xl font-bold text-black xs:text-4xl ">Order Confirmed</h1>
               <p className="text-xs font-semibold text-colorsub500">We hope you enjoy your food!</p>
             </div>
             <div className='bg-rose-100 bg-opacity-40 px-4 rounded-md overflow-y-auto max-h-96'>
