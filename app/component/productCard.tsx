@@ -14,15 +14,12 @@ type Products = {
 
 
 const ProductCard = ({ product }: { product: Products }) => {
-  //const [count, setCount] = useState(0);  
   const { addToCart,getProductCount } = useCart();
   
   const handleClick = () => {
-    //setCount(count + 1);
     addToCart({ name: product.name, count: getProductCount(product.name), price: product.price, image: product.image.desktop});
   };
   const handleClickMinus = () => {
-    //setCount(count + 1);
     addToCart({ name: product.name, count: getProductCount(product.name)-2, price: product.price, image: product.image.desktop});
   };
 
@@ -42,7 +39,7 @@ const ProductCard = ({ product }: { product: Products }) => {
            
           >
             <Image
-              className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
+              className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white hover:cursor-pointer"
               src="/assets/images/icon-decrement-quantity.svg"
               alt={product.name}
               width={24}
@@ -51,7 +48,7 @@ const ProductCard = ({ product }: { product: Products }) => {
             />
             <span className="col-span-1 text-white text-sm xs:text-xs mxs:text-sm">{getProductCount(product.name)}</span>
             <Image
-              className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white"
+              className="flex items-center justify-center p-1 col-span-1 w-5 h-5 rounded-full border border-white hover:cursor-pointer"
               src="/assets/images/icon-increment-quantity.svg"
               alt={product.name}
               width={24}

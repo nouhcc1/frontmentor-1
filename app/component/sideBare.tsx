@@ -30,7 +30,7 @@ const SideBare = () => {
               <li key={index} className="flex items-center justify-between py-4 col-span-2 border-b border-gray-300">
                 <div className="text-sm ">
                   <h1 className="font-bold text-colorsub800 line-clamp-1">{item.name}</h1>
-                  <p className="font-semibold text-amber-600">{item.count+"x"}   <span className='text-colorsub'><span className='text-xs font-thin '>@</span>${item.price}</span> <span className='text-colorsub500'>${item.count*item.price}</span></p>
+                  <p className="font-semibold text-amber-600">{item.count+"x"}   <span className='text-colorsub pl-2'><span className='text-xs font-thin '>@</span>${item.price}</span> <span className='text-colorsub500 pl-1'>${item.count*item.price}</span></p>
                 </div>
                 <button onClick={() =>removeFromCart(item.name)}>
                   <Image
