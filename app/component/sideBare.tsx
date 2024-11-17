@@ -69,7 +69,7 @@ const SideBare = () => {
         </div>
         }
         <div className={`p-4 flex flex-1 justify-center items-center fixed top-0 left-0 w-full h-screen bg-slate-700 bg-opacity-30 transition-all duration-500 ${ShowPopup===true ? "opacity-100":"opacity-0 pointer-events-none"}`} onClick={()=>setShowPopup(false)}>
-          <div className={`p-8 flex-grow grid content-start gap-4 max-w-lg h-auto max-h-full bg-white rounded-lg  transition-all duration-500 ${ShowPopup===true ? " opacity-100 scale-100":"opacity-0 scale-90"}`}>
+          <div className={`p-8 flex-grow grid content-start gap-4 max-w-lg h-auto max-h-full bg-white rounded-lg  transition-all duration-500 ${ShowPopup===true ? " opacity-100 scale-100":"opacity-0 scale-90"}`} onClick={(e)=>e.stopPropagation()}>
             <Image
                     className=" w-10 h-10"
                     src="/assets/images/icon-order-confirmed.svg"
